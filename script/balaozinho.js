@@ -1,23 +1,23 @@
-const balao = document.querySelector('#balaozinho');
-const listaMarcacaoBalao = document.querySelectorAll('.marcacao');
+const balaoEl = document.querySelector('#balaozinho');
+const listaMarcacaoBalaoEl = document.querySelectorAll('.marcacao');
 
-listaMarcacaoBalao.forEach(marcacao => {
+listaMarcacaoBalaoEl.forEach(marcacaoEl => {
 
-    marcacao.addEventListener('mouseover', () => {
-        titulo = marcacao.dataset.titulo;
-        conteudo = marcacao.dataset.conteudo;
-        cor = marcacao.dataset.cor;
-        balao.innerHTML = obtemHTMLBalao(titulo, conteudo);
-        balao.style.color = cor;
+    marcacaoEl.addEventListener('mouseover', () => {
+        titulo = marcacaoEl.dataset.titulo;
+        conteudo = marcacaoEl.dataset.conteudo;
+        cor = marcacaoEl.dataset.cor;
+        balaoEl.innerHTML = obtemHTMLBalao(titulo, conteudo);
+        balaoEl.style.color = cor;
     });
 
-    marcacao.addEventListener('mouseout', () => {
-        balao.innerHTML = '';
+    marcacaoEl.addEventListener('mouseout', () => {
+        balaoEl.innerHTML = '';
     });
 
-    marcacao.addEventListener('mousemove', evento => {
-        balao.style.left = `${evento.pageX}px`;
-        balao.style.top = `${evento.pageY}px`;
+    marcacaoEl.addEventListener('mousemove', evento => {
+        balaoEl.style.left = `${evento.pageX}px`;
+        balaoEl.style.top = `${evento.pageY}px`;
     });
 
 });
